@@ -1,0 +1,84 @@
+body{
+    background-image:url("wall1.jpg");
+    background-size: 100% 100%;
+     background-attachment: fixed;
+     width: 100%;
+     height: 660px;
+     
+}
+
+.hearderset{
+    padding-top: 250px;
+    box-sizing: border-box;
+}
+
+.hearderset h2{
+    font-size: 42px;
+    font-family: "Poppins", sans-serif;
+    
+
+}
+.hearderset h1{
+    font-size: 82px;
+    font-weight: bold; 
+    font-family: "Poppins", sans-serif;
+    
+
+}
+ 
+
+
+
+
+  
+  input, textarea {
+    width: 100%;
+
+  }
+
+  label{
+    font-family:  'Inconsolata', monospace;
+  }
+
+ .nav-item{
+     padding-right: 80px;
+     padding-left: 80px;
+     font-size: 20px;
+     font-family:  'Inconsolata', monospace;
+ }
+ .logo{
+    width:100;
+     height:100;
+ }
+
+ /* //////////////////////////////////// */
+
+ @media(max-width:655px) and (min-width:600){
+
+
+
+
+
+ }
+ @media(min-width: 700px) and (max-width: 991px){
+
+  .hearderset h2{
+        font-size: 30px;
+        font-family: "Poppins", sans-serif;
+    
+    
+    }
+    .hearderset h1{
+        font-size: 50px;
+        font-weight: bold; 
+        font-family: "Poppins", sans-serif;
+    
+    }
+     
+    .nav-item{
+        padding-right: 40px;
+        padding-left: 40px;
+        font-size: 17px;
+        font-family:  'Inconsolata', monospace;
+    }
+

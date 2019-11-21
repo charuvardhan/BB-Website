@@ -1,0 +1,123 @@
+<html>
+    <!DOCTYPE HTML>
+    <html>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <head> <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+          <link href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    </head>
+    <body>
+<div class= "bgimg">
+    <nav class= "navbar navbar-expand-md bg-dark navbar-dark  fixed-top ">
+        <div class="container">
+          
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#collapsenavbar">
+        <span class="navbar-toggle-icon"> <i class="fa fa-chevron-down" ></i> </span></button>
+        <div class="collapse navbar-collapse text-center" id="collapsenavbar">
+            <ul class="navbar-nav ml-auto mr-auto">
+                <li class= "nav-item">
+                    <a style="cursor: pointer;" id="character" class="nav-link  text-white" > CHARACTERS </a>
+                </li>
+               
+                <li class= "nav-item">
+                    <a style="cursor: pointer;" id="episode" class="nav-link  text-white" > EPISODES </a>
+
+                </li>
+                <li class= "nav-item">
+                        <a href="quote.html" style="cursor: pointer;" id="quote" class="nav-link  text-white" > QUOTES </a>
+
+                    
+                </li>
+                <li class= "nav-item">
+                        <a href="death.html" style="cursor: pointer;" id="death" class="nav-link  text-white" > DEATHS </a>
+                    
+                </li>
+            </ul>
+        </div>
+
+        </div>
+    </nav>
+    <div class="container text-center text-white hearderset">
+        <h1>A Complete website dedicated to Breaking Bad</h1>
+        <h2> All hail the king </h2>
+        <div class="imgsetting d-block m-auto" >
+   <img src="logo1.jpeg" class="logo" style="border-radius: 45% ; border:2px solid black"><br><br><br>
+</div>
+    </div>
+ </div> 
+ 
+<section class="card-columns" id="result" style="padding-left: 9%;" ></section>
+
+ 
+ 
+</body>
+<script type="text/javascript">
+  $(document).ready(function() {
+      $("#character").click(function(){ 
+          $("#result").empty();
+          $.get(`https://www.breakingbadapi.com/api/characters` , function(data,status){
+              console.log(data);
+              for(var i=0; i<data.length;i++)
+              {
+                 $("#result").append(
+                  `<div class="card" style="width:250px ; height:250px ; border:1px solid black; background-color:black ; opacity:0.88 ; color: white ">Name: ${data[i].name}<br>
+    
+                  Occupation: ${data[i].occupation}<br>
+                  Appearance: ${data[i].appearance}<br>
+                  Status: ${data[i].status}
+                   <img src="${data[i].img}" style="width:120px ; height:120px ; border: 1px solid "></div>
+                  `
+                 )
+              }
+          })
+      })
+  })
+  
+  $(document).ready(function() {
+      $("#episode").click(function(){
+          $("#result").empty();
+          $.get(`https://www.breakingbadapi.com/api/episodes` , function(data,status){
+              console.log(data);
+              for(var i=0;i<data.length;i++)
+              {
+                  $("#result").append(
+                `<div class="card" style="width:250px ; height:250px ; border:1px solid black; 
+                background-color: black ; opacity:0.88 ; color:white ">Episode: ${data[i].episode}<br>
+                Title: ${data[i].title}<br>
+                Season: ${data[i].season}<br>
+                Air Date: ${data[i].air_date}
+                Characters: ${data[i].characters}</div>`
+
+    
+                  )
+              }
+
+          })
+      })
+  })
+
+ 
+  
+
+
+</script>
+</html>
+
+
