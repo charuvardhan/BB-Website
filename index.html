@@ -1,16 +1,15 @@
 <html>
     <!DOCTYPE HTML>
     <html>
-    <!-- Latest compiled and minified CSS -->
+    
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-<!-- jQuery library -->
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-<!-- Popper JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 
-<!-- Latest compiled JavaScript -->
+
+
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <head> <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -33,11 +32,23 @@
         <div class="collapse navbar-collapse text-center" id="collapsenavbar">
             <ul class="navbar-nav ml-auto mr-auto">
                 <li class= "nav-item">
-                    <a style="cursor: pointer;" id="character" class="nav-link  text-white" > CHARACTERS </a>
+                    <a style="cursor: pointer;" id="character" class="nav-link  text-white" href="#result" > CHARACTERS </a>
                 </li>
                
-                <li class= "nav-item">
-                    <a style="cursor: pointer;" id="episode" class="nav-link  text-white" > EPISODES </a>
+                <li class="nav-item dropdown">
+                    <a style="cursor: pointer;" class="nav-link dropdown-toggle text-white"  id="episode" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      EPISODES
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item" id="season1" href="#result">Season 1</a>
+                      <a class="dropdown-item" id="season2" href="#result">Season 2</a>
+                      <a class="dropdown-item" id="season3" href="#result">Season 3</a>
+                      <a class="dropdown-item" id="season4" href="#result">Season 4</a>
+                      <a class="dropdown-item" id="season5" href="#result">Season 5</a>
+
+
+                    </div>
+                  </li>
 
                 </li>
                 <li class= "nav-item">
@@ -91,11 +102,11 @@
   })
   
   $(document).ready(function() {
-      $("#episode").click(function(){
+      $("#season1").click(function(){
           $("#result").empty();
           $.get(`https://www.breakingbadapi.com/api/episodes` , function(data,status){
               console.log(data);
-              for(var i=0;i<data.length;i++)
+              for(var i=0;i<7;i++)
               {
                   $("#result").append(
                 `<div class="card" style="width:250px ; height:250px ; border:1px solid black; 
@@ -112,6 +123,100 @@
           })
       })
   })
+
+
+  $(document).ready(function() {
+      $("#season2").click(function(){
+          $("#result").empty();
+          $.get(`https://www.breakingbadapi.com/api/episodes` , function(data,status){
+              console.log(data);
+              for(var i=7;i<20;i++)
+              {
+                  $("#result").append(
+                `<div class="card" style="width:250px ; height:250px ; border:1px solid black; 
+                background-color: black ; opacity:0.88 ; color:white ">Episode: ${data[i].episode}<br>
+                Title: ${data[i].title}<br>
+                Season: ${data[i].season}<br>
+                Air Date: ${data[i].air_date}
+                Characters: ${data[i].characters}</div>`
+
+    
+                  )
+              }
+
+          })
+      })
+  })
+
+  $(document).ready(function() {
+      $("#season3").click(function(){
+          $("#result").empty();
+          $.get(`https://www.breakingbadapi.com/api/episodes` , function(data,status){
+              console.log(data);
+              for(var i=20;i<33;i++)
+              {
+                  $("#result").append(
+                `<div class="card" style="width:250px ; height:250px ; border:1px solid black; 
+                background-color: black ; opacity:0.88 ; color:white ">Episode: ${data[i].episode}<br>
+                Title: ${data[i].title}<br>
+                Season: ${data[i].season}<br>
+                Air Date: ${data[i].air_date}
+                Characters: ${data[i].characters}</div>`
+
+    
+                  )
+              }
+
+          })
+      })
+  })
+
+  $(document).ready(function() {
+      $("#season4").click(function(){
+          $("#result").empty();
+          $.get(`https://www.breakingbadapi.com/api/episodes` , function(data,status){
+              console.log(data);
+              for(var i=33;i<46;i++)
+              {
+                  $("#result").append(
+                `<div class="card" style="width:250px ; height:250px ; border:1px solid black; 
+                background-color: black ; opacity:0.88 ; color:white ">Episode: ${data[i].episode}<br>
+                Title: ${data[i].title}<br>
+                Season: ${data[i].season}<br>
+                Air Date: ${data[i].air_date}
+                Characters: ${data[i].characters}</div>`
+
+    
+                  )
+              }
+
+          })
+      })
+  })
+
+  $(document).ready(function() {
+      $("#season5").click(function(){
+          $("#result").empty();
+          $.get(`https://www.breakingbadapi.com/api/episodes` , function(data,status){
+              console.log(data);
+              for(var i=46;i<62;i++)
+              {
+                  $("#result").append(
+                `<div class="card" style="width:250px ; height:250px ; border:1px solid black; 
+                background-color: black ; opacity:0.88 ; color:white ">Episode: ${data[i].episode}<br>
+                Title: ${data[i].title}<br>
+                Season: ${data[i].season}<br>
+                Air Date: ${data[i].air_date}
+                Characters: ${data[i].characters}</div>`
+
+    
+                  )
+              }
+
+          })
+      })
+  })
+
 
  
   

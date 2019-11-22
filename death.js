@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    console.log("sdsfd")
      $("#death").click(function(){
          $("#resul").empty();
          var n=$("input").val();
